@@ -22,13 +22,13 @@ export function App() {
                 const [itemsResponse, cartResponse, favoritesResponse] =
                     await Promise.all([
                         axios.get(
-                            'https://67909a30af8442fd7376e8d8.mockapi.io/todoHexlet/items/'
+                            'https://67909a30af8442fd7376e8d8.mockapi.io/todoHexlet/items'
                         ),
                         axios.get(
-                            'https://67909a30af8442fd7376e8d8.mockapi.io/todoHexlet/cart/'
+                            'https://67909a30af8442fd7376e8d8.mockapi.io/todoHexlet/cart'
                         ),
                         axios.get(
-                            'https://679b63a733d316846323ad48.mockapi.io/favorite/'
+                            'https://679b63a733d316846323ad48.mockapi.io/favorite'
                         ),
                     ]);
                 setIsLoading(false);
@@ -59,7 +59,7 @@ export function App() {
             } else {
                 setItemsCart((prev) => [...prev, obj]);
                 const { data } = await axios.post(
-                    'https://67909a30af8442fd7376e8d8.mockapi.io/todoHexlet/cart/',
+                    'https://67909a30af8442fd7376e8d8.mockapi.io/todoHexlet/cart',
                     obj
                 );
                 setItemsCart((prev) =>
@@ -112,7 +112,7 @@ export function App() {
             } else {
                 try {
                     const { data } = await axios.post(
-                        'https://679b63a733d316846323ad48.mockapi.io/favorite/',
+                        'https://679b63a733d316846323ad48.mockapi.io/favorite',
                         obj
                     );
                     setFavorite((prev) => [...prev, data]);
