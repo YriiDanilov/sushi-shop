@@ -20,6 +20,7 @@ body {
 
 header {
     border-bottom: 1px solid #eaeaea;
+    align-items: center;
     img {
         margin-right: 15px;
     }
@@ -27,6 +28,25 @@ header {
     h3,
     p {
         margin: 0;
+    }
+
+    @media screen and (max-width: 815px) {
+        ul li:nth-child(2) span,
+        ul li:nth-child(3) span {
+            display: none;
+        }
+    }
+    @media screen and (max-width: 670px) {
+        flex-direction: column;
+        row-gap: 30px;
+    }
+    @media screen and (max-width: 400px) {
+        display: flex;
+        align-items: start;
+
+        p {
+            display: none;
+        }
     }
 }
 
@@ -136,6 +156,18 @@ header {
     z-index: 0;
     h1 {
         margin: 0;
+    }
+    @media screen and (max-width: 670px) {
+        & > div:first-of-type {
+            flex-direction: column;
+            row-gap: 30px;
+        }
+    }
+}
+
+.card-wrapper {
+    @media screen and (max-width: 1110px) {
+        justify-content: center;
     }
 }
 

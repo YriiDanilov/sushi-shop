@@ -49,7 +49,7 @@ export const Home = ({
                     />
                 </div>
             </div>
-            <div className="d-flex flex-wrap">{renderItems()}</div>
+            <div className="card-wrapper d-flex flex-wrap">{renderItems()}</div>
         </div>
     );
 };

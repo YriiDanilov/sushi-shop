@@ -6,7 +6,7 @@ export function Header(props) {
     const { totalPrice } = useCart();
 
     return (
-        <header className="d-flex justify-between align-center p-40">
+        <header className="d-flex justify-between p-40">
             <Link to="">
                 <div className="d-flex align-center">
                     <img
@@ -15,7 +15,7 @@ export function Header(props) {
                         src="img/sushi-logo.jpg"
                         alt="logo"
                     />
-                    <div>
+                    <div class="header-wrapper-titles">
                         <h3 className="text-uppercase">Sushi shop</h3>
                         <p className="opacity-5">Лучшие ролы! Попробуй сам.</p>
                     </div>
