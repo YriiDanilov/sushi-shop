@@ -15,8 +15,8 @@ export function Card({
     id,
     loading = false,
 }) {
-    const { isItemAdded } = React.useContext(AppContext);
-    const [isFavorite, setIsFavorite] = React.useState(favorited);
+    const { isItemAdded, isItemAddedToFavorite } = React.useContext(AppContext);
+    // const [isFavorite, setIsFavorite] = React.useState(favorited);
     const obj = { title, parentId: id, price, img: String(img), id };
 
     const onClickPlus = () => {
@@ -25,7 +25,7 @@ export function Card({
 
     const onClickFavorite = async () => {
         onFavorite(obj);
-        setIsFavorite(!isFavorite);
+        // setIsFavorite(!isFavorite);
     };
 
     return (
@@ -89,7 +89,7 @@ export function Card({
                                 height={32}
                                 onClick={onClickFavorite}
                                 src={
-                                    isFavorite
+                                    isItemAddedToFavorite(title)
                                         ? 'img/heart-liked.svg'
                                         : 'img/heart-unliked.svg'
                                 }

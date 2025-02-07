@@ -110,19 +110,19 @@ export function App() {
                     prev.filter((el) => el.title !== obj.title)
                 );
             } else {
-                try {
-                    const { data } = await axios.post(
-                        'https://679b63a733d316846323ad48.mockapi.io/favorite',
-                        obj
-                    );
-                    setFavorite((prev) => [...prev, data]);
-                } catch (error) {
-                    console.error('Ошибка при удалении из корзины:', error);
-                }
+                const { data } = await axios.post(
+                    'https://679b63a733d316846323ad48.mockapi.io/favorite',
+                    obj
+                );
+                setFavorite((prev) => [...prev, data]);
             }
         } catch (error) {
             console.error('Ошибка при удалении из избранного:', error);
         }
+    };
+
+    const isItemAddedToFavorite = (title) => {
+        return favorites.some((item) => item.title === title);
     };
 
     return (
@@ -135,6 +135,7 @@ export function App() {
                 setCardOpened,
                 setItemsCart,
                 onAddToFavorite,
+                isItemAddedToFavorite,
             }}
         >
             <div className="wrapper clear">
