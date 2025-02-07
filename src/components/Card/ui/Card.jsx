@@ -16,7 +16,6 @@ export function Card({
     loading = false,
 }) {
     const { isItemAdded, isItemAddedToFavorite } = React.useContext(AppContext);
-    // const [isFavorite, setIsFavorite] = React.useState(favorited);
     const obj = { title, parentId: id, price, img: String(img), id };
 
     const onClickPlus = () => {
@@ -25,7 +24,6 @@ export function Card({
 
     const onClickFavorite = async () => {
         onFavorite(obj);
-        // setIsFavorite(!isFavorite);
     };
 
     return (
